@@ -1,1 +1,1 @@
-# training-SeleniumWebDriver
+# training SeleniumWebDriver
