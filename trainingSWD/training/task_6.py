@@ -17,9 +17,6 @@ def driver(request):
 def is_element_present (driver, *args):
     driver.find_element(*args)
 
-
-    #return len(driver.find_elements(*args)) > 0
-
 def test_example(driver):
     #driver.implicitly_wait(10)
     driver.get("http://localhost:8080/litecart/admin/login.php?redirect_url=%2Flitecart%2Fadmin%2F")
@@ -28,7 +25,6 @@ def test_example(driver):
     driver.find_element_by_name("login").click()
 
     list_ = driver.find_elements_by_css_selector("#box-apps-menu > li")
-
 
     for index in range(len(list_)):
         list_ = driver.find_elements_by_css_selector("#box-apps-menu > li")
