@@ -24,10 +24,6 @@ def test_example(driver):
 
     driver.get("http://localhost:8080/litecart/en/")
 
-    list_popular = driver.find_elements_by_css_selector("div#box-most-popular ul > li")
-    list_campaigns = driver.find_elements_by_css_selector("div#box-campaigns ul > li")
-    list_latest = driver.find_elements_by_css_selector("div#box-latest-products ul > li")
+    list_ = driver.find_elements_by_css_selector(".product")
 
-    check_stickers(list_popular)
-    check_stickers(list_campaigns)
-    check_stickers(list_latest)
+    check_stickers(list_)
