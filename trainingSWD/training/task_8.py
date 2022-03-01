@@ -32,14 +32,13 @@ def test_example(driver):
         raise Exception("Страны расположены не в алфавитном порядке")
 
     for i in range(len(rows)):
-        rows = driver.find_elements_by_css_selector(".row")
         columns = rows[i].find_elements_by_css_selector("td")
 
         if columns[5].text != "0":
             columns[4].find_element_by_css_selector("a").click()
             rows1 = driver.find_elements_by_css_selector("#table-zones tr")
             zones = list()
-            
+
             for index in range(1, len(rows1)-1):
                 columns1 = rows1[index].find_elements_by_css_selector("td")
                 get_value = columns1[2].find_element_by_css_selector("input").get_attribute("value")
@@ -49,5 +48,6 @@ def test_example(driver):
                 raise Exception("Зоны расположены не в алфавитном порядке")
 
             driver.back()
+            rows = driver.find_elements_by_css_selector(".row")
 
 
